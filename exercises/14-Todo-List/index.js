@@ -1,25 +1,25 @@
 // Your code here
 
-function deleteEvent(elemento) {
+function deleteElement(li) {
 
-    elemento.addEventListener('click', function handleClick(event) {
+    li.addEventListener('click', function handleClick(event) {
         event.target.parentElement.parentElement.classList.add("delete");
         document.querySelector(".delete").remove();
     });
 }
 
-const eliminar = document.querySelectorAll("i");
-for (let i = 0; i < eliminar.length; i++) {    
-    deleteEvent(eliminar[i]);   
+const deleteIcons = document.querySelectorAll("i");
+for (let i = 0; i < deleteIcons.length; i++) {    
+    deleteElement(deleteIcons[i]);   
 }
 
 const addNew = document.querySelector(".todo-header");
 
 addNew.addEventListener('click', (event) => {
-    let nuevoElemento = document.querySelector("#addToDo").value;
-    let insert = '<span><i class="fa fa-trash"></i></span>'+nuevoElemento;
+    let newElementText = document.querySelector("#addToDo").value;
+    let insert = '<span><i class="fa fa-trash"></i></span> '+newElementText;
     let listElement=document.createElement("li");
     listElement.innerHTML=insert;
-    deleteEvent(listElement);
+    deleteElement(listElement);
     document.querySelector("ul").appendChild(listElement);
 });
