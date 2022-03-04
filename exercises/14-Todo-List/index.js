@@ -1,5 +1,5 @@
 // Your code here
-
+// funtion to add  eventlistener to any 
 function deleteElement(li) {
 
     li.addEventListener('click', function handleClick(event) {
@@ -20,6 +20,6 @@ addNew.addEventListener('click', (event) => {
     let insert = '<span><i class="fa fa-trash"></i></span> '+newElementText;
     let listElement=document.createElement("li");
     listElement.innerHTML=insert;
-    deleteElement(listElement);
+    deleteElement(listElement.querySelector("span i"));
     document.querySelector("ul").appendChild(listElement);
 });
